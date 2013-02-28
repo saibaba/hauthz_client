@@ -135,16 +135,16 @@ Rule: At the lowest level of abstraction you have a rule. Each rule defines a ma
 Policy: A policy combines multiple rules and into a policy that can be checked if an authrozation request can be permitted. Rules can be combined by various algorithms. Currently two are supported (1) permitOverrides and (2) denyOverrides.
 
 
-XACML_ allows for combining multiple policies into a policy set. This api does not have policy set feature . This might be supported in future.
+XACML_ allows for combining multiple policies into a policy set. This api currently does not have policy set feature.
 
 
-Architecture
-============
+Dataflow
+========
 
-The architecture of the API follows very closely that of XACML_.
+The dataflow of this API follows very closely that of XACML_.
 
 
-.. image:: architecture.png
+.. image:: dataflow.png
 
 
 
