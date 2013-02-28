@@ -9,6 +9,8 @@ Hypermedia API Authorization Framework (hauthz)
 
 .. role:: red
 
+.. _XACML: http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.pdf
+
 
 Intro
 =====
@@ -21,7 +23,7 @@ What is this about? This API allows you to,
 
 Why do I care ?
 
-- So that your services do not have have to worry about the AuthZ cross cutting concerns (just like XACML). Also, see `Concepts`_.
+- So that your services do not have have to worry about the AuthZ cross cutting concerns (just like XACML_). Also, see `Concepts`_.
 
 What this is not about?
 
@@ -118,24 +120,24 @@ Quickstart
 Concepts
 ========
 
-XACML is a widely known framework defining the security policies and checking if a request to perform an operation is permitted under the defined policies. Although, it is very robust and generic framework, it is not a lightweight framework.
+XACML_ is a widely known framework defining the security policies and checking if a request to perform an operation is permitted under the defined policies. Although, it is very robust and generic framework, it is not a lightweight framework.
 
 The aim of this project is to create a more light-weight solution. The API provided by this project can be used by Hypermedia APIs to authorize an incoming request. That said, there is nothing that prevents you from using it for other purposes. 
 
-Many of the concepts are directly borrowed from XACML. Please refer to XACML documentation.
+Many of the concepts are directly borrowed from XACML_. Please refer to XACML_ documentation.
 
 Rule: At the lowest level of abstraction you have a rule. Each rule defines a match criteria and an effect if a given authorization request matches the criteria. An effect can be "Permit" or "Deny". The rules them-selves use various comparison, contanment and other binary conditions on request parameters.
 
 Policy: A policy combines multiple rules and into a policy that can be checked if an authrozation request can be permitted. Rules can be combined by various algorithms. Currently two are supported (1) permitOverrides and (2) denyOverrides.
 
 
-XACML allows for combining multiple policies into a policy set. This api does not have policy set feature . This might be supported in future.
+XACML_ allows for combining multiple policies into a policy set. This api does not have policy set feature . This might be supported in future.
 
 
 Architecture
 ============
 
-The architecture of the API follows very closely that of XACML.
+The architecture of the API follows very closely that of XACML_.
 
 
 `<architecture.pdf>`_
