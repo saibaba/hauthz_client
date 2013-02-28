@@ -11,6 +11,8 @@ Hypermedia API Authorization Framework (hauthz)
 
 .. _XACML: http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.pdf
 
+.. _JsonPath: http://goessner.net/articles/JsonPath/
+
 
 Intro
 =====
@@ -207,6 +209,7 @@ Notes
 -----
 - Url % "..." is used for URL templates with parameters. This construct parses the template field names and makes them available to the subsequent conditions for comparing with other contextual fields (See `Quickstart`_ for an example). The url itself can include regular expression characters.
 - Url / <regular expression> the same as above but without template parameters.
+- Syntax for jpath (JSON path) follows that of JsonPath_.
 
 Usage
 =====
