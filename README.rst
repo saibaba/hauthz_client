@@ -13,7 +13,7 @@ Hypermedia API Authorization Framework (hauthz)
 Intro
 =====
 
-What is this about?
+What is this about? This API allows you to,
 
 - Centrally store all authorization policies for providing role based, context based, and instance based access control for all of your hypermedia api services and other application components.
 
@@ -21,11 +21,12 @@ What is this about?
 
 Why do I care ?
 
-- So that your services do not have have to worry about the AuthZ cross cutting concerns (just like XACML). Also, see Concepts.
+- So that your services do not have have to worry about the AuthZ cross cutting concerns (just like XACML). Also, see `Concepts`_.
 
 What this is not about?
 
-- This is not identity management system. It is assumed that the caller of this API has securely identified the user making request to your Hypermedia API or other application component and obtained any subject attributes necessary making policy decisions.
+- This is not identity management system. 
+- It is assumed that the caller of this API has securely identified the user who is making request to your Hypermedia API or other application component and obtained any subject attributes that are necessary making policy decisions.
 
 
 Features
@@ -41,7 +42,7 @@ Following are the features of the authorization framework. Using this framework 
 - Instance level access (for example, only username="x" can access resource "y")
 
 
-See Quickstart and Samples for details.
+See `Quickstart`_ and Samples for details.
 
 Also, note that this is not Authentication system.
 
@@ -49,7 +50,8 @@ Also, note that this is not Authentication system.
 Quickstart
 ==========
 
-1) Make sure you have a valid username/password with Rackspace Cloud Identity (http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Overview-d1e65.html)
+1) Make sure you have a valid username/password with Rackspace Cloud Identity (http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Overview-d1e65.html). Replace the place holders <USERNAME> and <PASSWORD> in the below examples with your username and password.
+
 2) Create policy following the API specification. For e.g.,
 
 ::
@@ -136,36 +138,50 @@ Architecture
 The architecture of the API follows very closely that of XACML.
 
 
-TODO diagram.
+`<architecture.pdf>`_
 
 
-Grammar for rules
-=================
+Grammar
+=======
 
-Pseudo BNF
-----------
+
+Here is the grammer for a rule in Pseudo BNF
+--------------------------------------------
 
 <logical> ::= "|"  | "&" | "or" | "and" 
+
 <containment> ::= "in" | "not in"
+
 <ident> ::= [A-Za-z0-9_]+
+
 <nums> ::= [0-9]+
+
 <binop> ::= "<" | ">" | "==" | "!=" | "/"
+
 <quoted_string> ::= <single quoted string> | <double quoted string>
+
 <literal> ::= <quoted_string> | <nums>
 
 <literal_list> = <literal> | <literal_list> "," <literal>
+
 <literal_array> = "[" <literal_list> "]"
 
 <method> ::= "OPTIONS" | "GET" | "HEAD" | "POST" | "PUT" | "DELETE" |  "TRACE" | "CONNECT" 
+
 <method_list> ::= <method> | <method_list> "," <method>
+
 <method_term> ::= "Method" <containment> "[" <method_list> "]"
 
 <url_tmpl_term> ::= "Url" ("%"|"/") <quoted_string>
 
 <entity> ::= "Headers" | "Subject" | "Resource" | "Url"
+
 <entity_field> ::=  <entity> "." <ident>
+
 <entity_item_field> ::= <entity> "[" <quoted_string> "]"
+
 <entity_attribute_field> ::= ( "Subject" | "Resource" ) "." "attributes" "[" <quoted_string> "]"
+
 <resource_jpath_field> ::= "Resource" "." "jpath"  "(" <quoted_string> ")"
 
 <eterm> ::= <entity_attribute_field> | <resource_jpath_field> | <entity_field> | <entity_item_field>
@@ -185,7 +201,7 @@ Pseudo BNF
 
 Notes
 -----
-- Url % "..." is used for URL templates with parameters. This construct parses the template field names and makes them available to the subsequent conditions for comparing with other contextual fields (See Quickstart for an example). The url itself can include regular expression characters.
+- Url % "..." is used for URL templates with parameters. This construct parses the template field names and makes them available to the subsequent conditions for comparing with other contextual fields (See `Quickstart`_ for an example). The url itself can include regular expression characters.
 - Url / <regular expression> the same as above but without template parameters.
 
 Usage
@@ -230,7 +246,8 @@ There are essentially two API calls:
 |                        | matches the rule. Effect could "Permit" |
 |                        | or "Deny" the request.                  |
 +------------------------+-----------------------------------------+ 
-| rule                   | The rule itself. See grammar for syntax.|
+| rule                   | The rule itself. See `Grammar`_ for     |
+|                        | syntax.                                 |
 +------------------------+-----------------------------------------+
 
 
@@ -457,4 +474,4 @@ Another request from a subject with a role not permitted by the above policy,
 Condition on URL template parameters
 ------------------------------------
 
-See example in Quickstart section.
+See example in `Quickstart`_ section.
