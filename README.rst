@@ -13,6 +13,10 @@ Hypermedia API Authorization Framework (hauthz)
 
 .. _JsonPath: http://goessner.net/articles/JsonPath/
 
+.. _Identity: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Overview-d1e65.html
+
+.. _Identity_sub_users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sub-Users-d1e910.html
+
 
 Intro
 =====
@@ -38,7 +42,7 @@ Features
 
 Following are the features of the authorization framework. Using this framework a component or Hypermedia API/Service in your enterprise can make access control decision based on:
 
-- Subject/User roles
+- Subject/User roles and other attributes like email or id.
 - Matching resource URL with a regular expression
 - Matching resource URL template parameters with resource URL and using some contextual data (like header fields) for parameter values
 - Matching on the HTTP method/verb used by your Hypermedia API's client
@@ -46,7 +50,7 @@ Following are the features of the authorization framework. Using this framework 
 - Instance level access (for example, only username="x" can access resource "y")
 
 
-See `Quickstart`_ and Samples for details.
+See `Quickstart`_ and `Samples`_ for details.
 
 Also, note that this is not Authentication system.
 
@@ -54,9 +58,9 @@ Also, note that this is not Authentication system.
 Quickstart
 ==========
 
-1) Make sure you have a valid username/password with Rackspace Cloud Identity (http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Overview-d1e65.html). Replace the place holders <USERNAME> and <PASSWORD> in the below examples with your username and password.
+1) Make sure you have a valid username/password with Rackspace Cloud `Identity`_. Replace the place holders <USERNAME> and <PASSWORD> in the below examples with your username and password. Both admin users and `sub-users`_ would work.
 
-2) A demo server is running at 50.57.226.80:8080 (a aloud server) that you can use with your username/password.
+2) A poc server is running at 50.57.226.80:8080 that you can use with your username/password.
 
 3) Create policy following the API specification. For e.g.,
 
@@ -218,9 +222,9 @@ Usage
 Authentication
 --------------
 
-Currently, the API relies on Cloud identity (http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Overview-d1e65.html).
+Currently, the API relies on Rackspace Cloud `Identity`_.
 
-If you have a username and password already established with Cloud Identity, you are good to go. You can use the same username / password Or Tenant Id / Token. 
+If you have a username and password already established with Rackspace Cloud Identity, you are good to go. You can use the same username / password Or Tenant Id / Token. 
 
 
 API
