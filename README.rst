@@ -54,7 +54,9 @@ Quickstart
 
 1) Make sure you have a valid username/password with Rackspace Cloud Identity (http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Overview-d1e65.html). Replace the place holders <USERNAME> and <PASSWORD> in the below examples with your username and password.
 
-2) Create policy following the API specification. For e.g.,
+2) A demo server is running at 50.57.226.80:8080 (a aloud server) that you can use with your username/password.
+
+3) Create policy following the API specification. For e.g.,
 
 ::
 
