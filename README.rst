@@ -144,7 +144,8 @@ Architecture
 The architecture of the API follows very closely that of XACML_.
 
 
-`<architecture.pdf>`_
+.. image:: architecture.png
+
 
 
 Grammar
