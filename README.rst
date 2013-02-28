@@ -80,6 +80,7 @@ Quickstart
 3) In your application or web service (or interceptor, service intermediary or servlet filter, or WSGI middleware) check if an incoming request can be authorized by a policy. For e.g.,
 
 ::
+
     $ cat servers_test1.json 
     {
         "method" : "GET",
