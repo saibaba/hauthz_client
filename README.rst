@@ -15,7 +15,7 @@ Hypermedia API Authorization Framework (hauthz)
 
 .. _Identity: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Overview-d1e65.html
 
-.. _Identity_sub_users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sub-Users-d1e910.html
+.. _sub-users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sub-Users-d1e910.html
 
 
 Intro
